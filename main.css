@@ -1,67 +1,97 @@
 /* Reset and base styles */
 * {
-  margin: 4px;
-  box-sizing: border-box;
-  max-width: 2000;
+  margin: 0px;
+  /* box-sizing: border-box; */
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 2;
-  color: rgb(94, 89, 89);
-  background-color: #dcdcdc;
+  background-color: rgb(69, 123, 157);
 }
 
 /* Header styles */
 header {
-  background: linear-gradient(134deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-radius: 7px;
   text-align: center;
+  max-width: 100%;
   padding: 1rem;
-  max-width: 2000px;
 }
 
-header a {
-  font-size: clamp(2rem, 2.5vw, 3.5rem);
-  font-weight: 400;
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.95rem;
+}
+
+.nav-menu a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  font-weight: 700;
+  padding: 0.5em 0.9em;
+  color: rgb(6, 19, 24);
+  text-decoration: none;
+  transition: 0.4s;
+  position: relative;
+}
+
+.nav-menu a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 5px;
+  background-color: rgb(6, 19, 24);
+  bottom: 0;
+  left: 0;
+  transition: width 0.4s;
+}
+
+.nav-menu a:hover::before {
+  width: 100%;
 }
 
 /* Main content */
 main {
-  max-width: 2000px;
+  max-width: 100%;
 }
 
 /* Section styles */
 section {
-  background: rgb(233, 207, 207);
-  border-radius: 7px;
-  box-shadow: -1 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  background: rgb(228, 222, 222);
 }
 
 section h1 {
   color: #666eea;
-  font-size: 1.5rem;
+  font-size: clamp(1.8rem, 2.2vw, 1.4rem);
   text-align: center;
   font-weight: bold;
+  margin: top 10.5em;
 }
 
 section p {
   color: #665;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
   text-align: left;
   margin-left: 2rem;
 }
 
 section h2 {
 text-align: left;
+justify-content:left;
 }
 
 /* Output areas */
 .output {
-  background-color: #f7f9fa;
-  border: 0px solid #e9ecef;
   border-radius: 5px;
+  text-align: left;
+  
 }
 
 .output h2 {
@@ -72,7 +102,7 @@ text-align: left;
 }
 
 /* List styles */
-ul {
+/* ul {
   list-style-type: none;
   margin-left: 5rem;
   padding: 0;
@@ -96,7 +126,7 @@ ul li a:hover {
 
 ul li:last-child {
   margin-bottom: -1;
-}
+} */
 
 /* Error message styles */
 #error-messages,
@@ -160,4 +190,10 @@ code {
   padding: -1.75rem;
   border-radius: 3px;
   margin-top: -1.5rem;
+}
+
+footer{
+  text-align: center;
+  max-width: 100%;
+  padding: 1rem;
 }
