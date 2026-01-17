@@ -16,6 +16,19 @@ const characters = [
 
 // broken test data for exercise 6
 
+const brokenCharacters = [
+  { id: 1, name: "Monkey D. Luffy", age: 19 },
+  { id: 2, age: 21 },                       
+  { id: 3, name: "Cat Burglar Nami", age: 23 },
+  { id: 4, age: 20 },                       
+  { id: 5, name: "Sunisha", age: 900 },
+  { id: 6, age: 17 },                       
+  { id: 7, age: 90 },                       
+  { id: 8, name: "God Usopp", age: 19 },
+  { id: 9, age: 36 },                       
+  { id: 10, name: "Jinbe First son of the sea", age: 44 },
+];
+
 // 1. Iterate through the characters array and output each character's name to the console using console.log(). Then, dynamically create <li> elements for each character name and append them to the HTML unordered list element with the id "names-list".
 const namesList = document.getElementById("names-list");
 
@@ -66,8 +79,66 @@ renderNamesFunction(characters, "function-list");
 
 // 4. Write a function that accepts two parameters: an array of character objects and a numeric age threshold. Inside the function, filter the array to include only characters whose age is below the threshold value. For each filtered character, create an <li> element with their name and append it to the target list. Call this function and render the results in the unordered list with id "age-filter-list".
 
+function ageThreshold(characters, ageLimit, listId)
+  {
+    const list = document.getElementById(listId);
 
+    if(!list){
+      console.error(`Element with id ${listId} not found`);
+      return;
+    }
+    list.innerHTML = "";
+
+    const filteredCharacters = characters.filter((character) => character.age < ageLimit);
+
+    filteredCharacters.forEach((character) => {
+      console.log(character.name);
+
+    const li = document.createElement("li");
+    li.textContent = character.name;
+    list.appendChild(li);
+    });
+  } 
+
+  ageThreshold(characters, 30, "age-filter-list");
 
 // 5. Enhance your rendering functions from exercises 3 and 4 with error handling logic. Before accessing the name property of each character object, check whether the "name" property exists. If a character object is missing the name property, use console.error() to log a descriptive error message to the console, and dynamically create and display the error message in the HTML div element with id "error-messages".
 
+renderNamesWithErrors(characters, "error-handling-list", "error-messages");
+
 // 6. Create a second array called "brokenCharacters" that intentionally contains objects with missing name properties (e.g., objects with only id and age). Pass this broken array to your error-handling functions from exercise 5. Verify that your error handling correctly identifies the missing name properties, logs appropriate error messages to the console, and displays those error messages in the HTML div element with id "broken-array-errors".
+
+function renderNamesWithErrors(array, listId, errorDivId) {
+  const list = document.getElementById(listId);
+  const errorDiv = document.getElementById(errorDivId);
+
+  if (!list) return;
+
+  list.innerHTML = "";
+  if (errorDiv) errorDiv.innerHTML = "";
+
+  array.forEach((character) => {
+    if (!character.name) {
+      const message = `Error: Missing "name" for id: ${character.id ?? "N/A"}`;
+      console.error(message);
+
+      if (errorDiv) {
+        const p = document.createElement("p");
+        p.classList.add("error-message");
+        p.textContent = message;
+        errorDiv.appendChild(p);
+      }
+      return;
+    }
+
+    const li = document.createElement("li");
+    li.textContent = character.name;
+    list.appendChild(li);
+  });
+}
+
+renderNamesWithErrors(
+  brokenCharacters,
+  "broken-array-list",
+  "broken-array-errors"
+);

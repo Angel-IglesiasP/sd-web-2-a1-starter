@@ -103,6 +103,7 @@ section h3 {
 color: rgb(89, 115, 126);
 text-align: left;
 margin-left: 2rem;
+margin-right: 2rem;
 margin-top: 1rem;
 margin-bottom: 1rem;
 }
@@ -131,6 +132,7 @@ article h2 {
 color: rgb(47, 62, 52);
 text-align: center;
 margin-left: 2rem;
+margin-right: 2rem;
 margin-top: 1rem;
 margin-bottom: 2rem;
 }
@@ -152,6 +154,7 @@ article p{
   font-size: clamp(1rem, 2.2vw, 1.4rem);
   list-style: disc;
   margin-left: 1rem;
+  margin-right: 1rem;
   margin-bottom: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
@@ -169,33 +172,6 @@ article p{
   text-align: left;
 }
 
-/* List styles */
-/* ul {
-  list-style-type: none;
-  margin-left: 5rem;
-  padding: 0;
-  display: flex;
-  gap: 0.5rem;
-}
-
-ul li a {
-  display:inline-flex;
-  font-size: clamp(2rem, 2.5vw, 3.5rem);
-  color: rgb(207, 199, 199);
-  padding: 0.1em 0.5em;
-  text-decoration: none;
-  transition: transform 150ms ease;
-  transform-origin: center;
-}
-
-ul li a:hover {
-  transform: scale(1.1);
-}
-
-ul li:last-child {
-  margin-bottom: -1;
-} */
-
 /* Error message styles */
 #error-messages,
 #broken-array-errors {
@@ -203,14 +179,14 @@ ul li:last-child {
 }
 
 .error-message {
-  background-color: #f7d7da;
   color: #720c24;
   padding: -1.75rem;
   border: 0px solid #f5c6cb;
   border-radius: 3px;
   margin-bottom: -1.5rem;
   font-family: "Courier New", monospace;
-  font-size: -1.9rem;
+  margin-bottom: 1rem;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
 }
 
 /* Empty state styles */
@@ -228,7 +204,9 @@ img {
   margin: 0 auto;
 }
 
-/* Responsive design */
+/*Responsive design */
+/*not too sure how this affects the responsive design?? */
+
 @media (max-width: 767px) {
   body {
     padding: 9px;
@@ -247,25 +225,27 @@ img {
   }
 }
 
+
 /* Code-like styling for technical content */
-code {
+/*This is not used anywhere and I don't see the use for it?? */
+/* code {
   background-color: #e8ecef;
   padding: -1.25rem 0.5rem;
   border-radius: 2px;
   font-family: "Courier New", monospace;
   font-size: -1.9rem;
   color: #e82e8c;
-}
+} */
 
 /* Success indicator */
-.success {
+/* .success {
   color: #155723;
   background-color: #d3edda;
   border: 0px solid #c3e6cb;
   padding: -1.75rem;
   border-radius: 3px;
   margin-top: -1.5rem;
-}
+} */ 
 
 footer{
   text-align: center;
