@@ -7,7 +7,7 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 2;
-  background-color: rgb(69, 123, 157);
+  background-color: rgb(158, 177, 193);
 }
 
 /* Header styles */
@@ -32,10 +32,10 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.4rem);
   font-weight: 700;
   padding: 0.5em 0.9em;
-  color: rgb(6, 19, 24);
+  color: rgb(56, 24, 24);
   text-decoration: none;
   transition: 0.4s;
   position: relative;
@@ -56,6 +56,7 @@ header {
   width: 100%;
 }
 
+
 /* Main content */
 main {
   max-width: 100%;
@@ -71,7 +72,7 @@ section {
 }
 
 section h1 {
-  color: rgb(58, 82, 93);
+  color: rgb(38, 49, 42);
   font-size: clamp(1.8rem, 2.2vw, 1.4rem);
   text-align: center;
   font-weight: bold;
@@ -92,7 +93,7 @@ section p {
 }
 
 section h2 {
-color: rgb(89, 115, 126);
+color: rgb(38, 49, 42);
 text-align: center;
 margin-left: 1rem;
 margin-right: 1rem;
@@ -100,7 +101,7 @@ margin-top: 1rem;
 }
 
 section h3 {
-color: rgb(89, 115, 126);
+color: rgb(70, 90, 100);
 text-align: left;
 margin-left: 2rem;
 margin-right: 2rem;
@@ -118,7 +119,6 @@ article{
 
 article h1{
   color: rgb(31, 41, 51);
-  font-size: clamp(1.8rem, 2.2vw, 1.4rem);
   text-align: center;
   font-weight: bold;
   text-decoration: underline;
@@ -129,7 +129,7 @@ article h1{
 }
 
 article h2 {
-color: rgb(47, 62, 52);
+color: rgb(38, 49, 4);
 text-align: center;
 margin-left: 2rem;
 margin-right: 2rem;
@@ -139,7 +139,7 @@ margin-bottom: 2rem;
 
 article p{
   color: rgb(38, 49, 42);
-  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  font-size: clamp(1.8rem, 2.2vw, 1.4rem);
   text-align: left;
   margin-left: 1rem;
   margin-right: 1rem;
